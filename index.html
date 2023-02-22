@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Example</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form id="login-form">
+      <label for="email">Email:</label><br><br>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="password">Password:</label><br><br>
+      <input type="password" id="password" name="password" required><br><br>
+      <button type="submit" id="login-btn">Login</button><br>
+    </form>
+
+    <div id="error-message" style="display: none;">
+      <p>Invalid email or password. Please try again or register for a new account.</p>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
