@@ -24,4 +24,3 @@ fetch("http://3.229.255.54:3000/api/users", {
   .catch((error) => {
     console.error(error);
   });
-// });
