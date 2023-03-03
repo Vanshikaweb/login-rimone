@@ -9,25 +9,24 @@ loginButton.addEventListener('click', (e) => {
   const password = loginForm.password.value;
 
   // Make a fetch request to your API endpoint to handle login
+
   fetch('http://3.229.255.54:3000/api/users', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       'email':email,
       'password':password
-    },
-    // body: JSON.stringify({ email, password })
+    }
   })
   .then(response => {
-    console.log(response.json())
-    if (response.json.auth) {
+    if (response.status === 200) {
       // Login was successful, redirect to dashboard page
       window.location.href = '/dashboard.html';
     } else {
       // Login failed, show error message and provide option to register
       const errorMessage = document.querySelector('#error-message');
       errorMessage.style.display = 'block';
-
+  
       // Check if the error message element already contains the register link before appending it
       const registerLink = errorMessage.querySelector('a');
       if (!registerLink) {
@@ -39,5 +38,6 @@ loginButton.addEventListener('click', (e) => {
     }
   })
   .catch(error => console.error(error));
+  
 });
 
