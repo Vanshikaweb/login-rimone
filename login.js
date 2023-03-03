@@ -1,4 +1,3 @@
-// Assuming you have an HTML form with id="login-form" that has email and password fields, and a submit button with id="login-btn"
 const loginForm = document.querySelector('#login-form');
 const loginButton = document.querySelector('#login-btn');
 
@@ -29,11 +28,16 @@ loginButton.addEventListener('click', (e) => {
       const errorMessage = document.querySelector('#error-message');
       errorMessage.style.display = 'block';
 
-      const registerLink = document.createElement('a');
-      registerLink.textContent = 'Click here to register for a new account.';
-      registerLink.href = '/register.html';
-      errorMessage.appendChild(registerLink);
+      // Check if the error message element already contains the register link before appending it
+      const registerLink = errorMessage.querySelector('a');
+      if (!registerLink) {
+        const newRegisterLink = document.createElement('a');
+        newRegisterLink.textContent = 'Click here to register for a new account.';
+        newRegisterLink.href = '/register.html';
+        errorMessage.appendChild(newRegisterLink);
+      }
     }
   })
   .catch(error => console.error(error));
 });
+
