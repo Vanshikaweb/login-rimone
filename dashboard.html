@@ -5,8 +5,21 @@
   </head>
   <body>
     <h1>Welcome to your Dashboard</h1>
+    <!-- <ul id="allusers"></ul> -->
+    <!-- <p id="user-id"></p> -->
     <!-- <p>This is the dashboard for your application.</p> -->
-    <ul id="allusers"></ul>
+    
+    <button type="button" id="profile-btn" onclick= "redirecttoprofile()">Profile</button>
+
+    <!-- <button type="button" onclick=`location.href="profile.html?id=${userId}"`>Profile</button> -->
+
+    <!-- <button type="button" onclick=`location.href="profile.html?id=${userID};"`>Profile</button> -->
+
+    <button type="button" onclick="location.href='addcharger.html';">Add Charger</button>
+    <button type="button" onclick="location.href='chargerlist.html';">Charger List</button>
+    <button id="logout-btn">Logout</button>
     <script src="dashboard.js"></script>
+    <!-- <script src="login.js"></script> -->
   </body>
 </html>
+
