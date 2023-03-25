@@ -10,7 +10,7 @@ loginButton.addEventListener("click", (e) => {
 
   // Make a fetch request to your API endpoint to handle login
 
-  fetch("http://3.229.255.54:3000/api/users", {
+  fetch("http://54.83.240.126:3000/api/users/login", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -23,7 +23,10 @@ loginButton.addEventListener("click", (e) => {
       console.log(response);
       if (response.auth == true) {
         // Login was successful, redirect to dashboard page
-        window.location.href = "/dashboard.html";
+        // console.log(response)
+        window.location.href = "/dashboard.html?id=" + response.id;
+
+        
       } else {
         // Login failed, show error message and provide option to register
         const errorMessage = document.querySelector("#error-message");
