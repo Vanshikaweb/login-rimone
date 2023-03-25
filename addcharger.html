@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Charger</title>
+  </head>
+  <body>
+    <h1>Add Charger</h1>
+    <form id="add-charger-form">
+      <label for="serial-number">Serial ID:</label>
+      <input type="string" id="serialId" name="serial-number" required><br><br>
+      <label for="charger-name">Charger Name:</label>
+      <input type="string" id="name" name="charger-name" required><br><br>
+      <label for="power-rating">Power Rating:</label>
+      <input type="numeric"  id ="powerRating" name="power-rating" required><br><br>
+      <!-- <label for="location-name">Location Name:</label>
+      <input type="text" id="location-name" name="location-name" required><br><br> -->
+      <label for="latitute">Latitute:</label>
+      <input type="numeric"  id="latitute" name="latitute" required><br><br>
+      <label for="longitute">Longitude:</label>
+      <input type="numeric"  id="longitute" name="longitute" required><br><br>
+      <!-- <label for="charger-type">Charger Type:</label>
+      <select id="charger-type" name="charger-type" required>
+        <option value="">--Select Charger Type--</option>
+        <option value="Level 1">Level 1</option>
+        <option value="Level 2">Level 2</option>
+        <option value="DC Fast Charging">DC Fast Charging</option>
+      </select><br><br> -->
+      <label for="power">Price Per Unit:</label>
+      <input type="numeric"  id="pricePerUnit" name="power-per-unit" required><br><br>
+      <label for="power-min">Price Per Minute:</label>
+      <input type="numeric"  id="pricePerMinute" name="power-per-minute" required><br><br>
+      <label for="socket-type">Socket Type:</label>
+      <input type="string" id="socketType" name="socket-type" required><br><br>
+      <label for="available">Available:</label>
+      <select id="available" type="radio" name="available" required>
+        <option value="">True / False</option>
+        <option value="1">True</option>
+        <option value="0">False</option>
+        
+      </select><br><br>
+      <button type="submit" id="add-charger-btn">Add Charger</button>
+    </form>
+
+    <div id="error-message" style="display: none;">
+      <p>Unable to add charger. Please try again later.</p>
+    </div>
+
+    <script src="addcharger.js"></script>
+  </body>
+</html>
