@@ -1,6 +1,4 @@
 
-
-
 const registrationForm = document.getElementById("registration-form");
 
 registrationForm.addEventListener("submit", (event) => {
@@ -39,3 +37,5 @@ registrationForm.addEventListener("submit", (event) => {
       console.error(error);
     });
 });
+
+

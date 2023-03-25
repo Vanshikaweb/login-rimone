@@ -1,3 +1,4 @@
+// Assuming you have an HTML form with id="login-form" that has email and password fields, and a submit button with id="login-btn"
 const loginForm = document.querySelector("#login-form");
 const loginButton = document.querySelector("#login-btn");
 
@@ -45,5 +46,4 @@ loginButton.addEventListener("click", (e) => {
     })
     .catch((error) => console.error(error));
 });
-
 

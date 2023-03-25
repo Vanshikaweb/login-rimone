@@ -1,3 +1,11 @@
+
+// window.location.href = "/dashboard.html?id=" + response.id;
+
+// const userId= document.getElementById("users-id"); // Change this to the username of the successfully registered user
+
+
+// Get the logout button
+
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const userId = urlParams.get("id");
@@ -15,4 +23,3 @@ logoutBtn.addEventListener("click", () => {
   // Redirect the user to the login page
   window.location.href = "index.html";
 });
-
