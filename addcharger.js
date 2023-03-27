@@ -13,7 +13,7 @@ registrationForm.addEventListener("submit", (event) => {
   const socketType = document.getElementById("socketType").value;
   const available = document.getElementById("available").value;
 
-  fetch("http://54.83.240.126:3000/api/chargers", {
+  fetch("http://www.rimone.online:3000/api/chargers", {
     method: "POST",
     body: JSON.stringify({ serialId, name, powerRating, pricePerUnit, pricePerMinute, latitute, longitute, socketType, available }),
     headers: { "Content-Type": "application/json" },
@@ -29,7 +29,9 @@ registrationForm.addEventListener("submit", (event) => {
         console.error("Registration failed.");
       }
     })
+    //error
     .catch((error) => {
       console.error(error);
+
     });
 });

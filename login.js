@@ -11,7 +11,7 @@ loginButton.addEventListener("click", (e) => {
 
   // Make a fetch request to your API endpoint to handle login
 
-  fetch("http://54.83.240.126:3000/api/users/login", {
+  fetch("http://www.rimone.online:3000/api/users/login", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

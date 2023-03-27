@@ -7,7 +7,7 @@ const allcharger = document.getElementById("allcharger");
 
 // const userId= document.getElementById("users-id"); // Change this to the username of the successfully registered user
 
-fetch(`http://54.83.240.126:3000/api/chargers/${chargerId}`, {
+fetch(`http://www.rimone.online:3000/api/chargers/${chargerId}`, {
   method: "GET",
   headers: { "Content-Type": "application/json" },
 })
