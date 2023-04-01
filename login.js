@@ -11,14 +11,24 @@ loginButton.addEventListener("click", (e) => {
 
   // Make a fetch request to your API endpoint to handle login
 
+  // fetch("http://www.rimone.online:3000/api/users/login", {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //     email: email,
+  //     password: password,
+  //   },
+  // })
   fetch("http://www.rimone.online:3000/api/users/login", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      email: email,
-      password: password,
-    },
-  })
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json",
+    "Authorization": "c060263a-4c4c-3c3b-8475-e87f3b29e9cf",
+    email: email,
+    password: password,
+  },
+})
+
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
