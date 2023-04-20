@@ -12,32 +12,29 @@
       <input type="string" id="name" name="charger-name" required><br><br>
       <label for="power-rating">Power Rating:</label>
       <input type="numeric"  id ="powerRating" name="power-rating" required><br><br>
-      <!-- <label for="location-name">Location Name:</label>
-      <input type="text" id="location-name" name="location-name" required><br><br> -->
+      
       <label for="latitute">Latitute:</label>
       <input type="numeric"  id="latitute" name="latitute" required><br><br>
       <label for="longitute">Longitude:</label>
       <input type="numeric"  id="longitute" name="longitute" required><br><br>
-      <!-- <label for="charger-type">Charger Type:</label>
-      <select id="charger-type" name="charger-type" required>
-        <option value="">--Select Charger Type--</option>
-        <option value="Level 1">Level 1</option>
-        <option value="Level 2">Level 2</option>
-        <option value="DC Fast Charging">DC Fast Charging</option>
-      </select><br><br> -->
+   
       <label for="power">Price Per Unit:</label>
       <input type="numeric"  id="pricePerUnit" name="power-per-unit" required><br><br>
       <label for="power-min">Price Per Minute:</label>
       <input type="numeric"  id="pricePerMinute" name="power-per-minute" required><br><br>
+      <label for="power-min">Location:</label>
+      <input type="string"  id="location" name="location" required><br><br>
       <label for="socket-type">Socket Type:</label>
       <input type="string" id="socketType" name="socket-type" required><br><br>
+      <label for="charger-type">Charger Type:</label>
+      <input type="string" id="chargerType" name="charger-type" required><br><br>
       <label for="available">Available:</label>
-      <label for="available">Available:</label>
-<select id="available" name="available" required>
-  <option value="">--Select Availability--</option>
-  <option value="true">True</option>
-  <option value="false">False</option>
-</select><br><br>
+      
+    <select id="available" name="available" required>
+    <option value="">--Select Availability--</option>
+    <option value="true">True</option>
+    <option value="false">False</option>
+    </select><br><br>
 
       <button type="submit" id="add-charger-btn">Add Charger</button>
     </form>

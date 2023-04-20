@@ -8,16 +8,18 @@ registrationForm.addEventListener("submit", (event) => {
   const powerRating = document.getElementById("powerRating").value;
   const pricePerUnit= document.getElementById("pricePerUnit").value;
   const pricePerMinute = document.getElementById("pricePerMinute").value;
+  const location = document.getElementById("location").value;
   const latitute = document.getElementById("latitute").value;
   const longitute = document.getElementById("longitute").value;
   const socketType = document.getElementById("socketType").value;
+  const chargerType = document.getElementById("chargerType").value;
   const available = document.getElementById("available").value;
 
   fetch("http://www.rimone.online:3000/api/chargers", {
     method: "POST",
-    body: JSON.stringify({ serialId, name, powerRating, pricePerUnit, pricePerMinute, latitute, longitute, socketType, available }),
+    body: JSON.stringify({ serialId, name, powerRating, pricePerUnit, pricePerMinute, location, latitute, longitute, socketType, chargerType, available }),
     headers: { "Content-Type": "application/json",
-    "Authorization": "c060263a-4c4c-3c3b-8475-e87f3b29e9cf",
+    "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf",
    },
   })
   .then((response) => response.json())
@@ -37,4 +39,10 @@ registrationForm.addEventListener("submit", (event) => {
 
     });
 });
-const available = document.getElementById("available").value === "true";
+const availableSelect = document.querySelector('#available');
+
+availableSelect.addEventListener('change', function() {
+  const isAvailable = availableSelect.value === 'true';
+  console.log('isAvailable:', isAvailable);
+});
+

@@ -2,23 +2,164 @@
 <html>
   <head>
     <title>Dashboard</title>
-  </head>
-  <body>
-    <h1>Welcome to your Dashboard</h1>
-    <!-- <ul id="allusers"></ul> -->
-    <!-- <p id="user-id"></p> -->
-    <!-- <p>This is the dashboard for your application.</p> -->
+   
+  
     
-    <button type="button" id="profile-btn" onclick= "redirecttoprofile()">Profile</button>
+   
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-q9W3q3tC5+kD0oJhZp8S0MW0BfrOe/b/IsIWJ2X8W4cL7VYY/4zZoPHtg8ynSdZnOhL+ma4x4fQJ8X4W4cNYg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  <link rel="stylesheet" href="dashboard.css">
+  
+      
+  </head>
+ <body>
+ 
 
-    <!-- <button type="button" onclick=`location.href="profile.html?id=${userId}"`>Profile</button> -->
+  
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Dashboard</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+   
+      </ul>
+    
+    </div>
+    
+  </nav>
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+      <div class="sidebar-header">
+        <h3> Sidebar</h3>
+      </div>
+      <ul class="list-unstyled components">
+         
+        <li>
+          <a href="dashboard.html">Dashboard</a>
+        </li>
+        <li>
+          <a href="analytics.html">Analytics</a>
+        </li>
+        
+        <li> 
+           <a href="#pageSubmenu" data-toggle="collapse"  class="dropdown-toggle">Assets</a>
+           <ul class="collapse list-unstyled" id="pageSubmenu">
+            <li>
+              <a href="locationmanagement.html">Add Location</a>
+            </li>
+            <li>
+              <a href="stationsmanagement.html">Add Station</a>
+            </li>
+            <!-- <li>
+              <a href="firmware.html">Firmware Management</a>
+            </li> -->
+          </ul>
+        </li>
+        <li>
+          <a href="reward.html">Rewards</a>
+        </li>
+        <li>
+          <a href="">Business</a>
+        </li>
+       
+         
+      </ul>
+    </nav>
+  
+    <!-- Page Content -->
+    <div id="content">
+ 
+        
+        
+      <button type="button" id="sidebarCollapse" class="btn btn-info">
+        <span class="fas fa-bars"></span>
+        
+      </button>
+      <h3 style=" margin-left: 3rem;">Welcome to your Dashboard</h3><br>
+   
+    
+      
+  
+      <button type="button" style=" margin-left: 3rem;" class="btn btn-success" id="profile-btn" onclick= "redirecttoprofile()">Profile</button>
 
-    <!-- <button type="button" onclick=`location.href="profile.html?id=${userID};"`>Profile</button> -->
+  
+      <button type="button" class="btn btn-success" onclick="location.href='addcharger.html';">Add Charger</button>
+      <button type="button"  class="btn btn-success" onclick="location.href='chargerlist.html';">Charger List</button>
+    
+      <button id="logout-btn" class="btn btn-success" >Logout</button>
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 25rem; margin-top: 3rem; margin-left: 3rem;">
+            <div class="card-body">
+             <a href="location.html" style="color:black"> <h3 class="card-title">Location</h3></a> 
+             <!-- <h4 class="card-subtitle mb-2 text-muted">1</h4> -->
+             <h4 class="card-subtitle mb-2 text-muted" id="location">Loading...</h4>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col">
+          <div class="card" style="width: 25rem; margin-top: 3rem; margin-left: 3rem;">
+            <div class="card-body">
+              <a href="stations.html" style="color:black">
+                <h3 class="card-title">No. of Charging Stations</h3>
+              </a>
+              <h4 class="card-subtitle mb-2 text-muted" id="stations">Loading...</h4>
+            </div>
+          </div>
+        </div>
+        
+        
+        <div class="col">
+          <div class="card" style="width: 25rem; margin-top: 3rem; margin-left: 3rem;">
+            <div class="card-body">
+              <a href="availability.html" style="color:black">  <h3 class="card-title">Availability</h3></a>
+              <!-- <h4 class="card-subtitle mb-2 text-muted">1</h4> -->
+              <h4 class="card-subtitle mb-2 text-muted" id="availability">Loading...</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ 
 
-    <button type="button" onclick="location.href='addcharger.html';">Add Charger</button>
-    <button type="button" onclick="location.href='chargerlist.html';">Charger List</button>
-    <button id="logout-btn">Logout</button>
+    
+   
+   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Bootstrap JavaScript file -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script> -->
+
+   
+     
     <script src="dashboard.js"></script>
-    <!-- <script src="login.js"></script> -->
   </body>
 </html>
+       <!-- <a  href="#" style= "color: rgb(4, 158, 4);" class="card-link">4 available</a>
+              <a href="#" style= "color: rgb(200, 166, 42);" class="card-link">1 available</a>
+              <a href="#" style= "color: rgb(234, 37, 37);" class="card-link">0 unavailable</a> -->

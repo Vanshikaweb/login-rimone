@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Stations</title>
+  </head>
+  <body>
+    <h1>Add Charging Stations</h1>
+    <form id="add-stationr-form">
+      <label for="charge-id">Charge Point ID:</label>
+      <input type="string" id="chargeid" name="charge-id" required><br><br>
+      <label for="station-name">Station Name:</label>
+      <input type="string" id="name" name="station-name" required><br><br>
+      
+      <label for="location">Location Name:</label>
+      <input type="string"  id="location" name="location" required><br><br>
+      <label for="make">Make:</label>
+      <input type="string"  id ="make" name="make" required><br><br>
+      
+      <label for="model">Model</label>
+      <input type="string"  id="model" name="model" required><br><br>
+     
+
+      <!-- <label for="socket-type">Socket Type:</label>
+      <input type="string" id="socketType" name="socket-type" required><br><br>
+      <label for="charger-type">Charger Type:</label>
+      <input type="string" id="chargerType" name="charger-type" required><br><br> -->
+      <!-- <label for="available">Available:</label> -->
+  
+
+      <button type="submit" id="add-station-btn">Submit</button>
+    </form>
+
+    <div id="error-message" style="display: none;">
+      <p>Unable to add charger. Please try again later.</p>
+    </div>
+
+    <script src="stationsmanagement.js"></script>
+  </body>
+</html>

@@ -10,7 +10,7 @@ const allcharger = document.getElementById("allcharger");
 fetch(`http://www.rimone.online:3000/api/chargers/${chargerId}`, {
   method: "GET",
   headers: { "Content-Type": "application/json", 
-  "Authorization": "c060263a-4c4c-3c3b-8475-e87f3b29e9cf", },
+  "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf", },
 })
   .then((response) => response.json())
   .then((response) => {
@@ -22,8 +22,11 @@ fetch(`http://www.rimone.online:3000/api/chargers/${chargerId}`, {
         <h2>Power Rating: ${charger.powerRating}</h2>
         <h2>Price Per Unit: ${charger.pricePerUnit}</h2>
         <h2>Price Per Minute: ${charger.pricePerMinute}</h2>
+        <h2>Location: ${charger.location}</h2>
         <h2>Latitute: ${charger.latitute}</h2>
         <h2>Longitute: ${charger.longitute}</h2> 
+        <h2>socketType: ${charger.socketType}</h2> 
+        <h2>chargerType: ${charger.chargerType}</h2> 
         <h2>Available: ${charger.available}</h2>`;
     var item = document.createElement("li");
     item.innerHTML = msg;

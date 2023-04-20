@@ -5,18 +5,11 @@ const userId = urlParams.get("id");
 
 const allusers = document.getElementById("allusers");
 
-// const userId= document.getElementById("users-id"); // Change this to the username of the successfully registered user
 
-// fetch(`http://www.rimone.online:3000/api/users/${userId}`, {
-//   method: "GET",
-//   headers: { "Content-Type": "application/json" },
-// })
 fetch(`http://www.rimone.online:3000/api/users/${userId}`, {
   method: "GET",
-  headers: {
-    "Content-Type": "application/json",
-    "Authorization": "c060263a-4c4c-3c3b-8475-e87f3b29e9cf",
-  },
+  headers: { "Content-Type": "application/json", 
+   "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf", },
 })
 
   .then((response) => response.json())
