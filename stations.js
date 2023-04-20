@@ -20,13 +20,13 @@ const powerRatingHeading = document.createElement("th");
 powerRatingHeading.innerText = "Power Rating";
 headingsRow.appendChild(powerRatingHeading);
 
-// const latitudeHeading = document.createElement("th");
-// latitudeHeading.innerText = "Latitute";
-// headingsRow.appendChild(latitudeHeading);
+const latitudeHeading = document.createElement("th");
+latitudeHeading.innerText = "Latitute";
+headingsRow.appendChild(latitudeHeading);
 
-// const longitudeHeading = document.createElement("th");
-// longitudeHeading.innerText = "Longitute";
-// headingsRow.appendChild(longitudeHeading);
+const longitudeHeading = document.createElement("th");
+longitudeHeading.innerText = "Longitute";
+headingsRow.appendChild(longitudeHeading);
 
 const pricePerUnitHeading = document.createElement("th");
 pricePerUnitHeading.innerText = "Price per Unit";
@@ -76,13 +76,13 @@ fetch(`http://www.rimone.online:3000/api/chargers/`, {
       powerRating.innerText = charger.powerRating;
       row.appendChild(powerRating);
 
-      // const latitudeCell = document.createElement("td");
-      // latitudeCell.innerText = charger.latitute;
-      // row.appendChild(latitudeCell);
+      const latitudeCell = document.createElement("td");
+      latitudeCell.innerText = charger.latitute;
+      row.appendChild(latitudeCell);
 
-      // const longitude = document.createElement("td");
-      // longitude.innerText = charger.longitute;
-      // row.appendChild(longitude);
+      const longitude = document.createElement("td");
+      longitude.innerText = charger.longitute;
+      row.appendChild(longitude);
 
       const pricePerUnit = document.createElement("td");
       pricePerUnit.innerText = charger.pricePerUnit;
