@@ -2,9 +2,11 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const chargerId = urlParams.get("id");
 
-const table = document.getElementById("allcharger");
+const table = document.getElementById("add-location-btn");
 
-// Create the headings row and add it to the table
+
+
+
 const headingsRow = document.createElement("tr");
 table.appendChild(headingsRow);
 
@@ -51,6 +53,7 @@ headingsRow.appendChild(chargerTypeHeading);
 const availableHeading = document.createElement("th");
 availableHeading.innerText = "Availability";
 headingsRow.appendChild(availableHeading);
+
 
 fetch(`http://dev.rimone.online:3000/api/chargers/`, {
   method: "GET",
@@ -103,6 +106,7 @@ fetch(`http://dev.rimone.online:3000/api/chargers/`, {
       const chargerTypeCell = document.createElement("td");
       chargerTypeCell.innerText = charger.chargerType
       row.appendChild(chargerTypeCell); 
+      
       const availableCell = document.createElement("td");
       availableCell.innerText = charger.available;
       row.appendChild(availableCell);
@@ -111,6 +115,5 @@ fetch(`http://dev.rimone.online:3000/api/chargers/`, {
   .catch((error) => {
     console.error(error);
   });
-
 
 

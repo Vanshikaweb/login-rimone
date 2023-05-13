@@ -7,19 +7,12 @@
     <h1>Add Location</h1>
     <form id="add-location-form">
       <label for="location-name">Location Name:</label>
-      <input type="string" id="name" name="location-name" required><br><br>
-      <!-- <label for="timezone">Timezone:</label> -->
-      <!-- <select name="timezone" id="timezone" required>
-        <option value="">------ Select Timezone -------</option>
-        <option value="CST">Central Time (US & Canada)</option>
-        <option value="MST">Mountain Time (US & Canada)</option>
-        <option value="PST">Pacific Time (US & Canada)</option>
-      </select> -->
-      <!-- <br><br> -->
+      <input type="string"  id="name" name="location-name" required><br><br>
+      
       <label for="latitute">Latitute:</label>
-      <input type="string" id="latitute" name="latitute" required><br><br>
+      <input type="number" id="latitute" name="latitute" required><br><br>
       <label for="longitute">longitute:</label>
-      <input type="string"  id ="longitute" name="longitute" required><br><br>
+      <input type="number"  id ="longitute" name="longitute" required><br><br>
       <label for="country">Country:</label>
       <select id="country" name="country" required>
         <option value="">--Select Country--</option>
@@ -27,7 +20,27 @@
         <option value="">USA</option>
         </select>
         <br><br>
-     
+        <label for="use">Location Use:</label>
+        <select id="use"  required>
+          <option value="">--Select Location Use--</option>
+          <option value="">Public</option>
+          <option value="">Private</option>
+          </select>
+          <br><br>
+          <label for="use">Location Type:</label>
+        <select id="type"  required>
+          <option value="">--Select Location Type--</option>
+          <option value="">Residental</option>
+          <option value="">Hotel</option>
+          </select>
+          <br><br>
+          <label for="use">Location Amenities:</label>
+          <select id="amenities"  required>
+            <option value="">--Select Amenities--</option>
+            <option value="">Cafe</option>
+            <option value="">Restroom</option>
+            </select>
+            <br><br>
         <label for="state">State:</label>
         <select id="state" name="state"  required>
           <option value="">--Select State--</option>
@@ -35,32 +48,35 @@
           <option value="">Punjab</option>
           </select>
           <br><br>
-      <label for="City">City:</label>
-      <input type="string"  id="city" name="city" required><br><br>
-      <label for="address">Address Line 1:</label>
-      <input type="string"  id="address-1" name="address" required><br><br>
-      <label for="address">Address Line 2:</label>
-      <input type="string"  id="address-2" name="address" ><br><br>
-      <label for="postal code">Postal Code:</label>
-      <input type="numeric" id="code" name="postal-code" required><br><br>
-      <!-- <label for="Business">Business Owner</label>
-      <input type="string" id="business" name="business-owner" required><br><br> -->
-      <!-- <label for="state">Location Manager:</label>
-      <select id="manager" name="manager" type ="string" required>
-        <option value="">--Select--</option>
-        <option value=""></option>
-        <option value=""></option>
+      <label for="city">City:</label>
+      <select id="city"   required>
+        <option value="">--Select City--</option>
+        <option value="">SAS Nagar</option>
+        <option value="">SAB</option>
         </select>
-        <br><br> -->
+        <br><br>
+      <label for="address">Address Line 1:</label>
+      <input type="string"  id="line1" name="address" required><br><br>
+      <label for="address">Address Line 2:</label>
+      <input type="string"  id="line2" name="address" ><br><br>
+      <label for="postal code">Pin Code:</label>
+      <input type="string" id="pinCode"  required><br><br>
+      
         <label for="email">Contact Email</label>
         <input type="email" id="email" name="email" required><br><br>
-      <label for="Phone-Number">Phone number:</label>
-      <input type="numeric" id="numbers" name="Phone-Number" required><br><br>
+      <label for="Phone-Number">Support number:</label>
+      <input type="string" id="phone" name="Phone-Number" required><br><br>
     
-      
-
+      <label for="review">Reviews:</label>
+      <input type="string" id="review"  required><br><br>
+      <label for="reviews-star">Review Stars:</label>
+      <input type="string" id="stars"  required><br><br>
+      <label for="owner">Owner:</label>
+      <input type="string" id="owner"  required><br><br>
+      <label for="photos">Photo:</label>
+      <input type="string" id="photos"  required><br><br>
       <button type="submit" id="add-location-btn">Submit</button>
-      
+      <!-- <button type="edit" id="add-edit-btn">Edit</button> -->
     </form>
 
     <div id="error-message" style="display: none;">

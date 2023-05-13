@@ -41,7 +41,7 @@ const numberOfChargersElement = document.getElementById("stations");
 const locationElement = document.getElementById("location");
 const availabilityElement = document.getElementById("availability");
 // Fetch the number of chargers from the API
-fetch(`http://www.rimone.online:3000/api/chargers/`, {
+fetch(`http://dev.rimone.online:3000/api/chargers/`, {
   method: "GET",
   headers: { "Content-Type": "application/json", "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf" },
 })

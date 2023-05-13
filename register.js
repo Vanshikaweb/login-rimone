@@ -17,7 +17,7 @@ registrationForm.addEventListener("submit", (event) => {
     return;
   }
 
-  fetch("http://www.rimone.online:3000/api/users", {
+  fetch("http://dev.rimone.online:3000/api/users", {
   method: "POST",
   body: JSON.stringify({ name:fullName,guid:userName, phone, email, password }),
   headers: {

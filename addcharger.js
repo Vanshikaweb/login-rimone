@@ -15,7 +15,7 @@ registrationForm.addEventListener("submit", (event) => {
   const chargerType = document.getElementById("chargerType").value;
   const available = document.getElementById("available").value;
 
-  fetch("http://www.rimone.online:3000/api/chargers", {
+  fetch("http://dev.rimone.online:3000/api/chargers", {
     method: "POST",
     body: JSON.stringify({ serialId, name, powerRating, pricePerUnit, pricePerMinute, location, latitute, longitute, socketType, chargerType, available }),
     headers: { "Content-Type": "application/json",

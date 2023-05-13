@@ -19,7 +19,7 @@ loginButton.addEventListener("click", (e) => {
   //     password: password,
   //   },
   // })
-  fetch("http://www.rimone.online:3000/api/users/login", {
+  fetch("http://dev.rimone.online:3000/api/users/login", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",

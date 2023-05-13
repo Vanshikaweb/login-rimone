@@ -4,7 +4,9 @@ const chargerId = urlParams.get("id");
 
 const table = document.getElementById("allcharger");
 
-// Create the headings row and add it to the table
+//  To edit the location
+
+
 const headingsRow = document.createElement("tr");
 table.appendChild(headingsRow);
 
@@ -52,7 +54,8 @@ const availableHeading = document.createElement("th");
 availableHeading.innerText = "Availability";
 headingsRow.appendChild(availableHeading);
 
-fetch(`http://www.rimone.online:3000/api/chargers/`, {
+
+fetch(`http://dev.rimone.online:3000/api/chargers/`, {
   method: "GET",
   headers: { "Content-Type": "application/json", "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf" },
 })

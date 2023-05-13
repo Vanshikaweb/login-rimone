@@ -6,7 +6,7 @@ const userId = urlParams.get("id");
 const allusers = document.getElementById("allusers");
 
 
-fetch(`http://www.rimone.online:3000/api/users/${userId}`, {
+fetch(`http://dev.rimone.online:3000/api/users/${userId}`, {
   method: "GET",
   headers: { "Content-Type": "application/json", 
    "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf", },
