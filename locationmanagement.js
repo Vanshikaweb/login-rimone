@@ -1,119 +1,59 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const chargerId = urlParams.get("id");
-
-const table = document.getElementById("add-location-btn");
 
 
+const registrationForm = document.getElementById("add-location-form");
+
+registrationForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
 
-const headingsRow = document.createElement("tr");
-table.appendChild(headingsRow);
+  const name = document.getElementById("name").value;
+  const use = document.getElementById("use").value;
+  const type= document.getElementById("type").value;
+  const line1 = document.getElementById("line1").value;
+  const line2 = document.getElementById("line2").value;
+  const latitute = document.getElementById("latitute").value;
+  const longitute = document.getElementById("longitute").value;
+  const country = document.getElementById("country").value;
+  const state = document.getElementById("state").value;
+  const city = document.getElementById("city").value;
+  const pinCode = document.getElementById("pinCode").value;
+  const amenities= document.getElementById("amenities").value;
+  const photos = document.getElementById("photos").value;
+  const review = document.getElementById("review").value;
+  const stars = document.getElementById("stars").value;
+  const owner = document.getElementById("owner").value;
+  const phone = document.getElementById("phone").value;
 
-const idHeading = document.createElement("th");
-idHeading.innerText = "ID";
-headingsRow.appendChild(idHeading);
-
-const nameHeading = document.createElement("th");
-nameHeading.innerText = "Charger Name";
-headingsRow.appendChild(nameHeading);
-
-const powerRatingHeading = document.createElement("th");
-powerRatingHeading.innerText = "Power Rating";
-headingsRow.appendChild(powerRatingHeading);
-
-const latitudeHeading = document.createElement("th");
-latitudeHeading.innerText = "Latitute";
-headingsRow.appendChild(latitudeHeading);
-
-const longitudeHeading = document.createElement("th");
-longitudeHeading.innerText = "Longitute";
-headingsRow.appendChild(longitudeHeading);
-
-const pricePerUnitHeading = document.createElement("th");
-pricePerUnitHeading.innerText = "Price per Unit";
-headingsRow.appendChild(pricePerUnitHeading);
-
-const pricePerMinuteHeading = document.createElement("th");
-pricePerMinuteHeading.innerText = "Price per Minute";
-headingsRow.appendChild(pricePerMinuteHeading);
-
-const locationHeading = document.createElement("th");
-locationHeading.innerText = "Location";
-headingsRow.appendChild(locationHeading);
-
-const socketTypeHeading = document.createElement("th");
-socketTypeHeading.innerText = "Socket Type";
-headingsRow.appendChild(socketTypeHeading);
-
-const chargerTypeHeading = document.createElement("th");
-chargerTypeHeading.innerText = "Charger Type";
-headingsRow.appendChild(chargerTypeHeading);
-
-const availableHeading = document.createElement("th");
-availableHeading.innerText = "Availability";
-headingsRow.appendChild(availableHeading);
-
-
-fetch(`http://dev.rimone.online:3000/api/chargers/`, {
-  method: "GET",
-  headers: { "Content-Type": "application/json", "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf" },
-})
-  .then((response) => response.json())
-  .then((chargers) => {
-    console.log(chargers);
-
-    chargers.forEach((charger) => {
-      const row = document.createElement("tr");
-      table.appendChild(row);
-
-      const idCell = document.createElement("td");
-      idCell.innerText = charger.id;
-      row.appendChild(idCell);
-
-      const nameCell = document.createElement("td");
-      nameCell.innerText = charger.name;
-      row.appendChild(nameCell);
-
-      const powerRating = document.createElement("td");
-      powerRating.innerText = charger.powerRating;
-      row.appendChild(powerRating);
-
-      const latitudeCell = document.createElement("td");
-      latitudeCell.innerText = charger.latitute;
-      row.appendChild(latitudeCell);
-
-      const longitude = document.createElement("td");
-      longitude.innerText = charger.longitute;
-      row.appendChild(longitude);
-
-      const pricePerUnit = document.createElement("td");
-      pricePerUnit.innerText = charger.pricePerUnit;
-      row.appendChild(pricePerUnit);
-
-      const pricePerMinute = document.createElement("td");
-      pricePerMinute.innerText = charger.pricePerMinute;
-      row.appendChild(pricePerMinute);
-
-      const location = document.createElement("td");
-      location.innerText = charger.location;
-      row.appendChild(location);
-      
-      const socketTypeCell = document.createElement("td");
-      socketTypeCell.innerText = charger.socketType;
-      row.appendChild(socketTypeCell);
-      
-      const chargerTypeCell = document.createElement("td");
-      chargerTypeCell.innerText = charger.chargerType
-      row.appendChild(chargerTypeCell); 
-      
-      const availableCell = document.createElement("td");
-      availableCell.innerText = charger.available;
-      row.appendChild(availableCell);
-    });
+  fetch("http://dev.rimone.online:3000/api/chargers/location", {
+    method: "POST",
+    body: JSON.stringify({  name, use,type,line1, line2, latitute, longitute, country, state, city, pinCode, amenities, photos, review, stars, owner, phone }),
+    headers: { "Content-Type": "application/json",
+    "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf",
+   },
   })
-  .catch((error) => {
-    console.error(error);
-  });
+  .then((response) => response.json())
+  .then((response) => {
+    console.log(response);
+    if (response) {
+    
+      window.location.href = "/dashboard.html";
+    }
+      else {
+        console.error("Failed to add Location.");
+      }
+    })
+    //error
+    .catch((error) => {
+      console.error(error);
+
+    });
+});
+
+
+
+
+
+
+
 
 

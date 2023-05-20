@@ -1,109 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add new Tariff</title>
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> -->
+    <title>Tariff Rimone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-vl+WStq3lL9XvHuND62fWlzAVCct0L2Yf1y+apJwlno3pF83bq0+jXRMZTMLPZT0dYkLefYDgeMXCvA1wS4cA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   </head>
   <body>
-    <h2> Add Tariff</h2><br>
-   
-        <form id="add-tariff-form">
-          <label for="location-name"> Location Id:</label>
-          <input type="string" id="location-id"  required><br><br>
-          <label for="charger-id"> Charger Name:</label>
-          <input type="string" id="charger-id"  required><br><br>
-        
-          <label for="connector-id">Connector Id</label>
-          <input type="string" id="connector-id"  required><br><br>
-          <label for="tariff-name">Tariff Name:</label>
-          <input type="string"  id ="tariff-name"  required><br><br>
-          <label for="tariff-type">Tariff Type:</label>
-          <select id="tariff-type" required>
-            <option value="">------ Select Type -------</option>
-            <option value="fixed">Fixed</option>
-            <option value="variable">Variable</option>
-          </select>
-          
-          <div id="fixed-fields" style="display:none; margin-top: 10px;">
-            <label for="tariff-price">Tariff interval of pricing:</label>
-          <select id="tariff-price" required>
-            <option value="">------ Select interval -------</option>
-            <option value="5">5 min</option>
-            <option value="10">10 min</option>
-            <option value="15">15 min</option>
-            <option value="20">20 min</option>
-            <option value="30">30 min</option>
-            <option value="1">1 hr</option>
-          </select>
-            <br><br>
-            <label for="price">Best Price/Time interval:</label>
-            <input type="number" id="price">
-            <br><br>
-            <label for="session">Session Time:</label>
-            <input type="number" id="session">
-            <br><br>
-            <label for="penalty">Penalty if delayed:</label>
-            <input type="number" id="penalty">
-            <br><br>
-          </div>
-          
-          <div id="variable-fields" style="display:none; margin-top: 10px;">
-            <label for="price-variable">Basic Price/unit:</label>
-            <input type="number" id="price-variable">
-            <br><br>
-            <label for="gst">GST %age:</label>
-            <input type="number" id="gst">
-            <br><br>
-            <label for="charges">Parking charges applicable:</label>
-            <select id="charges">
-              <option value="">--- Select Yes/No ---</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <br><br>
-            <label for="charges">Parking charges type:</label>
-            <select id="charges">
-              <option value="">--- Select Type ---</option>
-              <option value="time">Time Based</option>
-              <option value="unit">Uint Based</option>
-            </select>
-            <br><br>
-            <label for="parking">Parking charges:</label>
-            <input type="number" id="charges">
-            <br><br>
-            <label for="gst">GST %age:</label>
-            <input type="number" id="gst">
-            <br><br>
-            <label for="service">Service charges applicable:</label>
-            <select id="service">
-              <option value="">--- Select Yes/No ---</option>
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
-            <br><br>
-            <label for="charges">Service charges type:</label>
-            <select id="charges">
-              <option value="">--- Select Type ---</option>
-              <option value="time">Time Based</option>
-              <option value="unit">Uint Based</option>
-            </select>
-            <br><br>
-            <label for="parking">Service charges:</label>
-            <input type="number" id="charges">
-            <br><br>
-            <label for="gst">GST %age:</label>
-            <input type="number" id="gst">
-            <br><br>
-          </div>
-          
-          <br><br>
-
-          <label for="">Currency:</label>
-          <input type="string"  id ="Currency"  required><br><br>
+    <br>
+    <h3 style="margin-left: 3rem;"> Tariff</h3>
+    <br>
+    <table class="table">
+      <thead>
+        <tr>
          
-    
-          <button type="submit" id="add-tariff-btn">Add new</button>
-          <script src="tariff.js"></script>
-    </body>
-    </html>
+        <th> Location</th>
+  <th>charger</th>
+  <th>connector </th>
+  <th>name</th>
+ <th> type </th>
+  <th>currency</th>
+  <th>timeIntervalPricing</th>
+  <th>timeInterval</th>
+  <th>sessionTime</th>
+  <th>penalty</th>
+  <th>basicPrice</th>
+  <th>bpGstPercent</th>
+  <th>parkingChargesApplicable</th>
+  <th>parkingChargesType</th>
+  <th>parkingCharges </th>
+  <th>pcGstPercent</th>
+  <th>serviceChargesApplicable</th>
+  <th>serviceChargesType</th>
+  <th>serviceCharges</th>
+  <th>scGstPercent</th>
+        </tr>
+      </thead>
+      <tbody id="tariff-data"></tbody>
+    </table>
+    <script src="tariff.js"></script>
+  </body>
+</html>

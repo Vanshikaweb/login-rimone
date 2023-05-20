@@ -17,17 +17,14 @@ fetch(`http://dev.rimone.online:3000/api/chargers/${chargerId}`, {
     console.log(response);
 
     const charger = response; // Get the first user from the filtered response
-    const msg = `<h1>username: ${charger.id}</h1>
-        <h2>name: ${charger.name}</h2>
-        <h2>Power Rating: ${charger.powerRating}</h2>
-        <h2>Price Per Unit: ${charger.pricePerUnit}</h2>
-        <h2>Price Per Minute: ${charger.pricePerMinute}</h2>
-        <h2>Location: ${charger.location}</h2>
-        <h2>Latitute: ${charger.latitute}</h2>
-        <h2>Longitute: ${charger.longitute}</h2> 
-        <h2>socketType: ${charger.socketType}</h2> 
-        <h2>chargerType: ${charger.chargerType}</h2> 
-        <h2>Available: ${charger.available}</h2>`;
+    const msg = `<h1>Charger Name: ${charger.name}</h1>
+        <h2>Location: ${charger.location.name}</h2>
+       
+        <h2>Serial Id: ${charger.serialId}</h2> 
+        <h2>charger Type: ${charger.type}</h2> 
+        <h2>Model Name: ${charger.oem.model}</h2> 
+        <h2>Min. Wallet Balance: ${charger.minBalance}</h2> 
+        `;
     var item = document.createElement("li");
     item.innerHTML = msg;
     allcharger.appendChild(item);
@@ -36,4 +33,7 @@ fetch(`http://dev.rimone.online:3000/api/chargers/${chargerId}`, {
   .catch((error) => {
     console.error(error);
   });
+  
+  
+  
 
