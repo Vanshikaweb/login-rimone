@@ -1,0 +1,53 @@
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Edit Charger</title>
+      </head>
+      <body>
+        <h1>Edit Charger</h1>
+        <form id="edit-form">
+          <input type="hidden" id="charger-id" name="chargerId" value="">
+    
+          <label for="name">Name:</label>
+          <input type="string" id="name" name="name" value=""><br><br>
+    
+          <!-- <label for="location">Location:</label>
+          <input id="location" value="" ></input><br><br>
+          
+          <label for="oem">OEM:</label>
+          <input id="oem" value=""></input><br><br> -->
+         
+    
+          <label for="serialId">Serial ID:</label>
+          <input type="string" id="serialId" name="serialId" value=""><br><br>
+    
+          <label for="type" value="">Charger Type:</label>
+          <select id="type"  required>
+            <option value=""></option>
+            <option value="AC">Ac</option>
+            <option value="DC">DC</option>
+            <option value="both">Both</option>
+            </select>
+            <br><br>
+    
+    
+          <label for="minBalance">Min Balance:</label>
+          <input type="string" id="minBalance" name="minBalance" value=""><br><br>
+          <!-- Rest of the form fields -->
+    
+          <button type="button" class="save-button">Save</button>
+        </form>
+    
+       
+        <div id="error-message" style="display: none;">
+          <p>Unable to update charger. Please try again later.</p>
+        </div>
+      </body>
+    </html>
+   
+
+    <script src="editcharger.js"></script>
+  </body>
+</html>
+

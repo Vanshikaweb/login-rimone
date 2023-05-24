@@ -1,17 +1,31 @@
+
 fetch("http://dev.rimone.online:3000/api/chargers/location", {
   method: "GET",
-  headers: { "Content-Type": "application/json", "Authorization": "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf" },
+  headers: {
+    "Content-Type": "application/json",
+    Authorization: "Bearer c060263a-4c4c-3c3b-8475-e87f3b29e9cf",
+  },
 })
-  .then((response) => response.json())
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
   .then((locations) => {
+    if (!Array.isArray(locations)) {
+      throw new Error("Chargers data is not an array");
+    }
     console.log(locations);
 
     const tbody = document.getElementById("location-data");
 
     locations.forEach((location) => {
+      // const reFn= `redirecttolocation(${location.id})`;
+      // const msg = `<button onclick= "${reFn}" style="margin-bottom: 30px;"><h1>Charger Name: ${location.name}</h1></button>`;
       const row = `
         <tr>
-          <td>${location.name}</td>
+          <td><button class="edit-button" data-id="${location.id}">${location.name}</button></td>
           <td>${location.use}</td>
           <td>${location.type}</td>
           <td>${location.line1}</td>
@@ -23,20 +37,38 @@ fetch("http://dev.rimone.online:3000/api/chargers/location", {
           <td>${location.city}</td>
           <td>${location.pinCode}</td>
           <td>${location.amenities}</td>
-          <td>${location.photos}</td>
-          <td>${location.review}</td>
-          <td>${location.stars}</td>
-          <td>${location.owner}</td>
-          <td>${location.phone}</td>
+         
         </tr>
       `;
       tbody.innerHTML += row;
+      
+    });
+    // Add event listener to the edit buttons
+    const editButtons = document.getElementsByClassName("edit-button");
+    Array.from(editButtons).forEach((button) => {
+      button.addEventListener("click", handleEditButtonClick);
     });
   })
   .catch((error) => {
     console.error(error);
   });
 
+function handleEditButtonClick(event) {
+  const locationId = event.target.getAttribute("data-id");
+  // Redirect to the edit.html page with the location ID
+  window.location.href = `/editlocation.html?id=${locationId}`;
+}
+{/* <td>${location.use}</td>
+          <td>${location.type}</td>
+          <td>${location.line1}</td>
+          <td>${location.line2}</td>
+          <td>${location.latitute}</td>
+          <td>${location.longitute}</td>
+          <td>${location.country}</td>
+          <td>${location.state}</td>
+          <td>${location.city}</td>
+          <td>${location.pinCode}</td>
+          <td>${location.amenities}</td> */}
 // const queryString = window.location.search;
 // const urlParams = new URLSearchParams(queryString);
 // const chargerId = urlParams.get("id");

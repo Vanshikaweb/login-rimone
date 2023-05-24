@@ -1,11 +1,6 @@
 
-// const queryString = window.location.search;
-// const urlParams = new URLSearchParams(queryString);
-// const userId = urlParams.get("id");
 
 const allcharger = document.getElementById("allcharger");
-
-// const userId= document.getElementById("users-id"); // Change this to the username of the successfully registered user
 
 fetch(`http://dev.rimone.online:3000/api/chargers`, {
   method: "GET",

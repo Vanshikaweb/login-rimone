@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Location</title>
+  </head>
+  <body>
+    <h1>Edit Location</h1>
+    <form id="edit-form-location">
+      <input type="hidden" id="  location-id" name="  locationId" value="YOUR_CHARGER_ID_HERE">
+      <label for="location-name">Location Name:</label>
+      <input type="string"  id="name" name="location-name"  value="" required><br><br>
+      
+      <label for="latitute">Latitute:</label>
+      <input type="numeric" id="latitute" name="latitute" value="" required><br><br>
+      <label for="longitute">longitute:</label>
+      <input type="numeric"  id ="longitute" name="longitute" value="" required><br><br>
+      <label for="country">Country:</label>
+      <select id="country"  required>
+        <option value=""></option>
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+        </select>
+        <br><br>
+        <label for="use">Location Use:</label>
+        <select id="use"  required>
+          <option value=""></option>
+          <option value="Public">Public</option>
+          <option value="Private">Private</option>
+          </select>
+          <br><br>
+          <label for="type">Location Type:</label>
+        <input id="type" value="" required></input>
+         
+         
+          <br><br>
+          <label for="amenities">Location Amenities:</label>
+          <input id="amenities" value=""  required>
+            </input>
+            <br><br>
+        <label for="state">State:</label>
+        <select id="state"   required>
+          <option value=""></option>
+          <option value="Haryana">Haryana</option>
+          <option value="Punjab">Punjab</option>
+          </select>
+          <br><br>
+      <label for="city">City:</label>
+      <input id="city" value=""  required>
+       
+        </input>
+        <br><br>
+      <label for="address">Address Line 1:</label>
+      <input type="string"  id="line1" name="address" value="" required><br><br>
+      <label for="address">Address Line 2:</label>
+      <input type="string"  id="line2" name="address" value="" ><br><br>
+      <label for="postal code">Pin Code:</label>
+      <input type="string" id="pinCode" value="" required><br><br>
+
+      
+
+      <button type="button" class="save-button-location">Save</button>
+    </form>
+
+    <!-- Rest of the HTML -->
+    <div id="error-message" style="display: none;">
+      <p>Unable to update   location. Please try again later.</p>
+    </div>
+  </body>
+</html>
+
+
+<script src="editlocation.js"></script>
+</body>
+</html>
