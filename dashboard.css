@@ -25,7 +25,7 @@
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b;
+  border-bottom: 1px solid #a19535;
 }
 
 #sidebar ul p {
@@ -37,17 +37,18 @@
   padding: 10px;
   font-size: 1.1em;
   display: block;
+  color: #fff;
 }
 
 #sidebar ul li a:hover {
-  color: #7386D5;
+  color: #a19535;
   background: #fff;
 }
 
 #sidebar ul li.active > a,
 a[aria-expanded="true"] {
   color: #fff;
-  background: #6d7fcc;
+  background: #a19535;
 }
 
 a[data-toggle="collapse"] {
@@ -57,6 +58,7 @@ a[data-toggle="collapse"] {
 a[aria-expanded="false"]::before,
 a[aria-expanded="true"]::before {
   content: '\e259';
+
   display: block;
   position: absolute;
   right: 20px;
@@ -66,6 +68,7 @@ a[aria-expanded="true"]::before {
 
 a[aria-expanded="true"]::before {
   content: '\e260';
+
 }
 
 /* Page content */
@@ -78,9 +81,39 @@ a[aria-expanded="true"]::before {
 
 .fas.fa-bars:before {
   content: "\f0c9";
+  /* color: #a19535; */
+ 
 }
 
 .fas.fa-times:before {
  
   content: "\f00d";
+}
+.card {
+  width: 25rem;
+  margin-top: 3rem;
+  margin-left: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #a19535
+}
+.card  a{
+ text-decoration: none;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 0.5rem;
 }

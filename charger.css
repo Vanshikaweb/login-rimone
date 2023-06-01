@@ -1,39 +1,62 @@
-/* Styles for modal */
+/* Modal Styles */
 #qr-modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-  }
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+#qrcode-modal {
+  margin-top: 20px;
   
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 300px;
-    text-align: center;
-    position: relative; /* Added */
-  }
-  
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+
   
   table {
     width: 100%;
     border-collapse: collapse;
+   background-color: #f3f2eb;
   }
-  
+  th {
+    background-color: #ffc90e;
+  }
+  .edit-button{
+    background-color: #a19535;
+    color: #fff;
+  }
   th, td {
     padding: 8px;
     text-align: left;
@@ -47,4 +70,8 @@
   tr:hover {
     background-color: #f5f5f5;
   }
-    
+  
+    .qr-button{
+      background-color: #a19535;
+      color: #fff;
+    }

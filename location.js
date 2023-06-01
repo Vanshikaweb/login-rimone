@@ -21,11 +21,10 @@ fetch("http://dev.rimone.online:3000/api/chargers/location", {
     const tbody = document.getElementById("location-data");
 
     locations.forEach((location) => {
-      // const reFn= `redirecttolocation(${location.id})`;
-      // const msg = `<button onclick= "${reFn}" style="margin-bottom: 30px;"><h1>Charger Name: ${location.name}</h1></button>`;
+      
       const row = `
         <tr>
-          <td><button class="edit-button" data-id="${location.id}">${location.name}</button></td>
+          <td><button class="edit-button" data-id="${location.id}">${location.name} </button></td>
           <td>${location.use}</td>
           <td>${location.type}</td>
           <td>${location.line1}</td>

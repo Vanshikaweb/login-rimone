@@ -1,7 +1,7 @@
 
-  .container {
+.container {
     display: flex;
-    /* justify-content: center; */
+  
     margin: 0 auto;
     max-width: 100%;
   }
@@ -10,7 +10,7 @@
     border-collapse: collapse;
     width: 100%;
     max-width: 800px;
-    /* margin-left: 2.7rem; */
+    /* background-color: aliceblue; */
   }
 
   th, td {
@@ -21,10 +21,9 @@
   }
 
   th {
-    background-color: #f2f2f2;
+    background-color: #ffc90e;
   }
-  #allcharger th {
-   
-    background-color: #04AA6D;
-
+  .edit-button{
+    background-color: #a19535;
+    color: #fff;
   }
